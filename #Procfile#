@@ -1,0 +1,9 @@
+
+
+
+if app.debug is not True:
+   	     now = datetime.datetime.now()
+	     	 r = request.url
+		   with open('error.log', 'a') as f:
+		   			  current_timestamp = now.strftime("%d-%m-%Y %H:%M:%S")
+					  		      f.write("\n404 error at {}: {}".format(current_timestamp, r))

@@ -1,6 +1,8 @@
 body {
  font-family: sans-serif;
  background: #eee;
+   padding: 60px 0;
+  background: #ffffff;
  }
 
  a, h1, h2 {
@@ -69,6 +71,7 @@ h2 {
  color: red;
  font-size: 0.8em;
  background-color: #FFFFFF;
+
  }
 
  .datagrid table {
@@ -128,4 +131,9 @@ h2 {
  text-decoration:none;
  position:relative;
 
+}
+
+
+.footer {
+ padding-top: 30px;
 }
