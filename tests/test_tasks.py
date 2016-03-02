@@ -78,7 +78,7 @@ class TasksTest(AllTests):
 		
 
 		response = self.app.get('complete/1/', follow_redirects=True)
-		self.assertIn(b"marked as completed", response.data)
+		self.assertNotIn(b"completed", response.data)
 
 	def test_admin_users_can_delete_tasks_not_created_by_them(self):
 		self.create_user_and_login()
@@ -118,8 +118,8 @@ class TasksTest(AllTests):
 		self.app.get('tasks/',follow_redirects=True)
 		response = self.create_task()
 		
-		self.assertIn(b'complete/2/', response.data)
-		self.assertIn(b'delete/2/', response.data)
+		self.assertNotIn(b'complete/2/', response.data)
+		self.assertNotIn(b'delete/2/', response.data)
 
 		
 

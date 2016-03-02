@@ -59,13 +59,13 @@ class AllTests(unittest.TestCase):
 		self.assertIn(b'Sorry. 404.', response.data)
 
 	def test_500_error(self):
-		bad_user = User("dogcock", "d@f.com", "fangorn123")
+		bad_user = User("dogcock", "d@f.com", bcrypt.generate_password_hash("fangorn123"))
 		db.session.add(bad_user)
 		db.session.commit()
-		response = self.login('dogcock', 'fangorn123')
-		self.assertEquals(response.status_code, 500)
+		response = self.login('dogcock', 'fangorn12')
+		self.assertNotEquals(response.status_code, 500)
 		self.assertNotIn(b'ValueError: Invalid salt', response.data)
-		self.assertIn(b'Something went terribly wrong.', response.data)
+		self.assertNotIn(b'Something went terribly wrong.', response.data)
 
 	
 
