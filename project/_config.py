@@ -16,7 +16,7 @@ e4f474e79369b5 2aaa32891c27b6 30e5f3c0c19f2e 06d9cc9631ebe1 ee12907a7af2e7
 fe33e091d4f8d9 e4289833bcc1b3 3619249e677bea 48e8cdab76ac91 b81fa50b0f7329
 """
 
-DEBUG = True
+DEBUG = False
 
 #define the full path for the DATABASE
 DATABASE_PATH = os.path.join(basedir, DATABASE)

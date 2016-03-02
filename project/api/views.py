@@ -74,3 +74,8 @@ def get_task(task_id):
 		code = 404
 	
 	return make_response(jsonify(data), code)
+
+
+@api_blueprint.route('/api/v1/newtask/', methods = ['POST'])
+def new_task(data_posted):
+	return jsonify(items=data_posted)
