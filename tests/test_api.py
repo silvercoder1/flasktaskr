@@ -58,6 +58,14 @@ class APITests(unittest.TestCase):
 		self.assertIn(b'Run around in circles', str(response.data))
 		self.assertNotIn(b'Purchase Real Python', str(response.data))
 
+	def test_invalid_task_endpoint_returns_error(self):
+		self.add_tasks()
+		response = self.app.get('api/v1/tasks/10/', follow_redirects = True)
+
+		self.assertEquals(response.status_code, 404)
+		self.assertEquals(response.mimetype, 'application/json')
+		self.assertIn(b'element does not exist', str(response.data))
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -1,6 +1,6 @@
 from functools import wraps
 from flask import flash, redirect, jsonify, \
-session, url_for, Blueprint
+session, url_for, Blueprint, make_response
 
 from project import db
 from project.models import Task
@@ -56,13 +56,21 @@ def api_tasks():
 @api_blueprint.route('/api/v1/tasks/<int:task_id>/')
 def get_task(task_id):
 	result = db.session.query(Task).filter_by(task_id=task_id).first()
-	data = {
-		'task_id':result.task_id,
-		'task name':result.name,
-		'due date':unicode(result.due_date),
-		'priority': result.priority,
-		'posted date': unicode(result.posted_date),
-		'status': result.status,
-		'user id': result.user_id
-		}
-	return jsonify(items=data)
+	code = ''
+	if result:
+
+		data = {
+			'task_id':result.task_id,
+			'task name':result.name,
+			'due date':unicode(result.due_date),
+			'priority': result.priority,
+			'posted date': unicode(result.posted_date),
+			'status': result.status,
+			'user id': result.user_id
+			}
+		code = 200
+	else:
+		data = {'error': 'element does not exist'}
+		code = 404
+	
+	return make_response(jsonify(data), code)
