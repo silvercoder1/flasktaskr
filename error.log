@@ -83,3 +83,8 @@
 404 error at 02-03-2016 22:07:32: http://localhost/thisDoesntExist/
 404 error at 02-03-2016 22:07:42: http://localhost/thisDoesntExist/
 404 error at 02-03-2016 22:07:43: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 22:10:44: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 22:10:45: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 22:10:45: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 22:10:55: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 22:10:56: http://localhost/thisDoesntExist/
