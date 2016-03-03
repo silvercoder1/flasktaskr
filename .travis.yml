@@ -1,16 +1,16 @@
-#language
 language:
-    - python
-    
-#language version
+- python
 python:
-    - "3.4"
-    - "2.7"
-    
-#install dependencies
+- '3.4'
+- '2.7'
 install:
-    - pip install -r requirements.txt
-    
-#run tests
+- pip install -r requirements.txt
 script:
-    - nosetests
+- nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: Dm343RiokfXBQ9VDEqIEySyLwJ3TSwdfQ0Ve0aC5j68bvC4xSrYdoBcXaZqd4IDOq0mjHBmBLQVkp0KM/5OF9KwcXsWmN97aAzTKva3Qgbt4PXiLJPBzYNXiOhD34wWxo2+9x35eJzutnxLOwFqb7nbUhiy/5+PMdA/mKd8ZoIUqYcv5vJC1WH7pG7tvq2oIKGTtGl4JEWI5or55VeUWnImUt8ECawdwbmvo2wahHckmfXDNkKmluKtzaNtptghUchSnaopGBExRq49oUtTN4B4crcnhGEuyzTS+tefJ+OEnE6l5wpmTi0JfiBNwytmIi6U2uvXshej692CVpS17e/PsiQIQ3Ngt+NpdmZugu13KowBf0mTGmwH366pt9vYjFJX/k3k3OJQOJZwvXHbnFEJhZfupYUysce04QMf2suw1CEjQ0Xw+7cA4L1RpyaIWZWj9g6Mh8tva68yFvw04FmXmeLiVr72DiONV2n6UGgCdKUeG2D60su57StOa4/i2pnqMKOIir0VCcjkSlDdvX2Pt9J9MvLaG2p9Zj2DyPBsWuaWs4/esT826S8eCev+qz/yCXckdC94LKRB0hN+lHLtrUDXiXex69SAl1kYw5s1TIG78cVxv7qhmr0wywyFcomzAZEx9aD4dcOzfj7FAzRMKIm4BHrRJSNVLyPDpLF0=
+  app: rocky-shore-93264
+  on:
+    repo: silvercoder1/flasktaskr
