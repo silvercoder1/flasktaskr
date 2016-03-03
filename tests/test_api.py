@@ -2,6 +2,8 @@ import os
 import unittest
 from datetime import date
 
+import json
+
 from project import app, db
 from project._config import basedir
 from project.models import Task
@@ -65,6 +67,17 @@ class APITests(unittest.TestCase):
 		self.assertEquals(response.status_code, 404)
 		self.assertEquals(response.mimetype, 'application/json')
 		self.assertIn(b'element does not exist', str(response.data))
+
+	def test_new_task_successfully_posted(self):
+		get_response = self.app.get('api/v1/newtask/', follow_redirects = True)
+		self.assertEquals(get_response.status_code, 200)
+
+		self.assertIn(b'error', str(get_response.data))
+
+		post_response = self.app.post('api/v1/newtask/', data=json.dumps({'testonly': 'ok lah'}), follow_redirects = True)
+		self.assertEquals(post_response.status_code, 200)
+		self.assertIn(b'You have added', str(post_response.data))
+
 
 
 if __name__ == "__main__":
