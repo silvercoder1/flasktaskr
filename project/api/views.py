@@ -77,5 +77,5 @@ def get_task(task_id):
 
 
 @api_blueprint.route('/api/v1/newtask/', methods = ['POST'])
-def new_task(data_posted):
-	return jsonify(items=data_posted)
+def new_task():
+	return jsonify(items=request.data)

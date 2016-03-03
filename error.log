@@ -103,3 +103,17 @@
 404 error at 02-03-2016 23:14:51: http://localhost/thisDoesntExist/
 404 error at 02-03-2016 23:15:01: http://localhost/thisDoesntExist/
 404 error at 02-03-2016 23:15:02: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 23:15:20: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 23:15:21: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 23:15:22: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 23:15:32: http://localhost/thisDoesntExist/
+404 error at 02-03-2016 23:15:33: http://localhost/thisDoesntExist/
+404 error at 03-03-2016 09:09:27: http://0.0.0.0:5000/favicon.ico
+500 error at 03-03-2016 09:12:27: http://0.0.0.0:5000/api/v1/newtask/
+500 error at 03-03-2016 09:12:27: http://0.0.0.0:5000/api/v1/newtask/
+500 error at 03-03-2016 09:12:27: http://0.0.0.0:5000/api/v1/newtask/
+404 error at 03-03-2016 09:13:13: http://localhost/thisDoesntExist/
+404 error at 03-03-2016 09:13:14: http://localhost/thisDoesntExist/
+404 error at 03-03-2016 09:13:15: http://localhost/thisDoesntExist/
+404 error at 03-03-2016 09:13:27: http://localhost/thisDoesntExist/
+404 error at 03-03-2016 09:13:27: http://localhost/thisDoesntExist/
